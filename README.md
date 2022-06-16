@@ -13,6 +13,13 @@ $ ./out/emoji helicopter
 🚁
 $ ./out/emoji rocket
 🚀
+$ ./out/emoji --list-all # or you can use the -L flag
+haircut: 💇
+barber pole: 💈
+syringe: 💉
+pill: 💊
+.....
+flag for zimbabwe: 🇿
 ```
 
 ## Build instructions

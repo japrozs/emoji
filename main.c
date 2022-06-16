@@ -1307,7 +1307,8 @@ void help(){
 		"Usage :: emoji [emoji_name]\n\n"
 		"Options::\n"
 		"	--help		Prints this message\n"
-		"	--version	Prints version\n\n"
+		"	--version	Prints version\n"
+		"	--list-all, -L  Lists all emojis\n\n"
 		"License :: MIT\n"
 	);
 }
@@ -1351,6 +1352,11 @@ void print_emoji(const char* str){
 	}
 }
 
+void list_all(){
+	for(int i = 0;i < emojis_len;i++)
+		printf("%s: %s\n", emojis[i][0], emojis[i][1]);
+}
+
 int main(int argc, char** argv){
 	int p = 0;
 	char str[MAX_BUF];
@@ -1369,6 +1375,14 @@ int main(int argc, char** argv){
 		version();
 		exit(EXIT_SUCCESS);
 	}
+
+	if(
+          (argc == 2 && (strcmp(argv[1], "--list-all") == 0)) ||
+          (argc == 2 && (strcmp(argv[1], "-L") == 0)))
+        {
+		list_all();
+                exit(EXIT_SUCCESS);
+        }	
 
 	for(int i = 1;i < argc;i++){
 		for(int j = 0;j < (int)strlen(argv[i]);j++){
