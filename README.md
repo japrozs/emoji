@@ -20,6 +20,9 @@ syringe: 💉
 pill: 💊
 .....
 flag for zimbabwe: 🇿
+
+# or you can pipe the --list-all flag to fzf
+$ ./out/emoji --list-all | fzf
 ```
 
 ## Build instructions
